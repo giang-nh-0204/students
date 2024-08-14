@@ -1,0 +1,60 @@
+/* 
+- CSS common 
+- Add By Giang-NH
+- 10/08/2024
+*/
+
+body {
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    color: #0c1e33;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.badge {
+    border-radius: 2px;
+    padding: 6px;
+}
+
+.w-0\.5 {
+    width: 5%;
+}
+
+.bg-purple-custom {
+    background-color: #e1d2ff;
+}
+
+.bg-organ-custom {
+    background-color: #fde1ac;
+}
+
+.bg-info-custom {
+    background-color: #bae5f5;
+}
+
+.bg-primary-custom {
+    background-color: #4ac3ff52;
+}
+
+.bg-success-custom {
+    background-color: #ccefbf;
+}
+
+/* Đoạn CSS đẩy giao diện sang phải để hiển thị side bar */
+.content-padding {
+    padding-left: 214px;
+}
+
+@media (max-width: 992px) {
+    .content-padding {
+        padding-left: 0;
+    }
+}
+/* End CSS đẩy giao diện sang phải để hiển thị side bar */

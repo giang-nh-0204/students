@@ -1,0 +1,427 @@
+/* 
+- CSS student 
+- Add By Giang-NH
+- 10/08/2024
+*/
+
+/* ======================Start CSS Side Bar======================= */
+.side-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: block;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.side-bar-inner {
+    width: 214px;
+}
+
+.side-bar-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0c1e33;
+    color: #fff;
+    height: 100vh;
+}
+
+.side-bar-content > .section,
+.logo-section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.48);
+}
+
+.side-bar-content > .section,
+.logo-section-inner {
+    padding: 18px 36px;
+}
+
+.side-bar-content > .section-overflow {
+    max-height: 260px;
+    overflow: auto;
+}
+
+.logo-section {
+    position: relative;
+    padding: 0 !important;
+}
+
+.logo-section > .btn-close-side-bar {
+    display: none;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.last-section {
+    margin-top: auto; /* Đẩy section cuối cùng xuống đáy */
+    margin-bottom: 0; /* Đảm bảo cách đáy 0px */
+}
+
+/* Phần CSS trang đang chọn trong danh sách side bar */
+.section > .active {
+    border-radius: 4.932px 0px 0px 4.932px;
+    border-left: 4px solid #fff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) -8.57%, rgba(255, 255, 255, 0) 100%);
+}
+
+.section > .title {
+    position: relative;
+    font-size: 10px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    transform-origin: left;
+}
+
+.section > .title.show {
+    font-size: 7px;
+    margin-bottom: 8px;
+    transform: scale(1.2);
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.dropdown-content.show {
+    max-height: 260px;
+}
+
+.dropdown-icon {
+    display: none;
+    position: absolute;
+    right: 15px;
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+/* Khi show danh sách chức năng thì hiển thị nút đóng */
+.section > .title.show .dropdown-icon {
+    display: block;
+}
+
+/* Khi hover vào title khi đóng danh sách thì không hiển thị nút đóng */
+.section > .title:hover .dropdown-icon {
+    display: none;
+}
+
+/* Khi danh sách đang mở và hover vào title thì hiển thị icon */
+.section > .title.show:hover .dropdown-icon {
+    display: block;
+}
+
+/* Chiều cao phần tử đầu tiên của side bar và nav bar */
+.section.logo-section,
+.nav-bar {
+    height: 60px;
+}
+
+.logo > img {
+    width: 24px;
+    height: 19px;
+}
+
+.logo > .text {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.func > .text {
+    font-size: 9px;
+}
+
+.func > i,
+.icon > i {
+    font-size: 1rem;
+}
+
+/* Media query cho màn hình Mobile trở xuống */
+@media (max-width: 992px) {
+    .side-bar {
+        transform: translateX(-100%); /* Sidebar ẩn mặc định */
+    }
+
+    .btn-close-side-bar {
+        display: block !important;
+    }
+}
+/* ======================Start CSS Side Bar======================= */
+
+/* ======================Start CSS Nav Bar======================= */
+.nav-bar {
+    width: 100%;
+    border-bottom: 1px solid rgba(206, 216, 229, 0.97);
+}
+
+.nav-bar > .container {
+    height: 100%;
+}
+
+.nav-bar-content {
+    width: 100%;
+    padding-bottom: 18px;
+}
+
+.search-input {
+    background-color: #f5f6f8;
+    border-radius: 4.932px;
+    border: 0.493px #ebedf2;
+    padding: 4px 8px;
+    font-size: 8px;
+    min-width: 250px;
+}
+
+.search-input:focus {
+    outline: 2px solid #007bff; /* Thay đổi border khi focus */
+}
+
+.avatar > img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.icon-bars {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .icon-bars {
+        display: block;
+    }
+}
+
+/* ======================Start CSS Nav Bar======================= */
+
+/* ===================Start CSS Student index ===================*/
+/* Start CSS chung trang index */
+
+.head-func {
+    border-bottom: 1px solid #ced8e5;
+}
+
+.head-func .title {
+    font-size: 0.9rem;
+}
+
+.head-func .title > i {
+    font-size: 1.1rem;
+}
+
+/* End CSS chung trang index */
+
+/* Start CSS text và thanh học kỳ */
+#progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+#progress-text {
+    font-size: 0.6rem;
+    margin-bottom: 7px;
+}
+
+#progress-container #progress-bar {
+    height: 5px;
+    width: 0;
+    background-color: #0c1e33;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    border-radius: 25px 0 0 25px;
+    transition: width 0.5s ease-in-out;
+}
+/* End CSS text và thanh học kỳ */
+
+/* Start CSS lịch hiện tại */
+.calendar {
+    font-size: 0.6rem;
+}
+
+.calendar-inner {
+    padding: 0 18px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 2px solid #ced8e5;
+}
+
+.calendar-icon {
+    cursor: pointer;
+}
+
+.calendar-icon > i {
+    font-size: 1rem;
+}
+
+.calendar-separator {
+    border: none;
+    margin: 0;
+}
+
+.calendar-body {
+    padding-top: 10px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.calendar-days {
+    font-weight: 400;
+    color: #737a83;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.calendar-days span {
+    position: relative;
+    padding: 4px;
+    cursor: context-menu;
+}
+
+.calendar-days span::before {
+    border-radius: 1.644px;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s;
+    transform: translate(-50%, -50%) scale(0.7);
+    z-index: -1;
+}
+
+.calendar-days span:hover::before {
+    background-color: #f0f0f0;
+}
+
+.prev-month,
+.next-month {
+    color: #bec7cf;
+}
+
+.current-day {
+    color: white !important;
+}
+
+.current-day::before {
+    background-color: #0c1e33 !important;
+}
+
+.sunday {
+    color: #eb5757;
+}
+
+/* End CSS lịch hiện tại */
+
+/* Start CSS học phần */
+.box-hp:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+}
+
+.box-hp {
+    position: relative;
+}
+
+.box-hp::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    border-radius: 4px;
+    border: 1px solid #ced8e5;
+    transform: translate(2px, 2px);
+    z-index: -1;
+}
+
+@media (max-width: 1400px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+}
+
+@media (max-width: 468px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* End CSS học phần */
+
+/* Start CSS thông báo */
+.notification-header {
+    border-bottom: 1px solid #ced8e5;
+}
+
+.notification-header > .date {
+    font-size: 0.7rem;
+}
+
+.badge-success {
+    background-color: #ccefbf;
+}
+
+.badge-danger {
+    background-color: #dc354552;
+}
+
+.notification-body > .title {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.title > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content > span {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notification-body > .content {
+    font-size: 0.7rem;
+}
+/* End CSS thông báo */
+
+/* Start CSS lịch học sắp đến */
+.lh-table {
+    min-width: 668px;
+}
+/* End CSS lịch học sắp đến */
+
+/* ===================End CSS Student index ===================*/

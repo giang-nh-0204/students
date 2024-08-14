@@ -66,6 +66,8 @@ class MY_Loader extends CI_Loader
         else :
 
             $this->view('templates/students/header', $vars);
+            $this->view('templates/students/side_bar', $vars);
+            $this->view('templates/students/nav_bar', $vars);
             $this->view($template_name, $vars);
             $this->view('templates/students/footer', $vars);
         endif;
